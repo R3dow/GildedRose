@@ -9,4 +9,12 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(19);
   });
 
+  it("normal item quality is never negative", function() {
+    items = [ new Item("+5 Dexterity Vest", 10, 0) ];
+
+    update_quality();
+
+    expect(items[0].quality).toEqual(0);
+  });
+
 });
