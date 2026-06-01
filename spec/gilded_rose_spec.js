@@ -17,4 +17,13 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(0);
   });
 
+  it("normal item quality decreases twice as fast after sell date", function() {
+    items = [ new Item("+5 Dexterity Vest", 0, 20) ];
+
+    update_quality();
+
+    expect(items[0].sell_in).toEqual(-1);
+    expect(items[0].quality).toEqual(18);
+  });
+
 });
